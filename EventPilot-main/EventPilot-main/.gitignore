@@ -1,0 +1,58 @@
+
+node_modules/
+dist/
+build/
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+__pycache__/
+*.pyc
+.DS_Storenode_modules/
+dist/
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+*.db
+*.sqlite3
+EOF~
+# Frontend directories
+mkdir -p frontend/src/{assets,components/{layout,dashboard,tasks,risks},pages,services,data}
+
+# Layout components
+touch frontend/src/components/layout/{Navbar,Sidebar}.jsx
+
+# Dashboard components
+touch frontend/src/components/dashboard/{StatCard,ProgressChart,HealthScore}.jsx
+
+# Task and risk components
+touch frontend/src/components/tasks/TaskCard.jsx
+touch frontend/src/components/risks/RiskAlert.jsx
+
+# Pages
+touch frontend/src/pages/{Dashboard,EventSetup,Tasks,Risks,Team}.jsx
+
+# Services and sample data
+touch frontend/src/services/api.js
+touch frontend/src/data/sampleData.js
+
+# Backend and docs
+mkdir -p backend docs
+touch backend/{app.py,database.py,recommendations.py,requirements.txt,.env.example}
+touch docs/demo-script.md
+touch README.md
+
+# Ignore generated and private files
+cat > .gitignore <<'EOF'
+node_modules/
+dist/
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+*.db
+*.sqlite3
